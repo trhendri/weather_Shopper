@@ -1,0 +1,28 @@
+{
+  "name": "weather-shopper-project",
+  "version": "1.0.0",
+  "description": "Software QA Automation project for https://weathershopper.pythonanywhere.com/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trhendri/weather_Shopper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trhendri/weather_Shopper/issues"
+  },
+  "homepage": "https://github.com/trhendri/weather_Shopper#readme",
+  "devDependencies": {
+    "@wdio/allure-reporter": "^9.6.3",
+    "@wdio/cli": "^9.6.4",
+    "@wdio/local-runner": "^9.6.4",
+    "@wdio/mocha-framework": "^9.6.4",
+    "@wdio/spec-reporter": "^9.6.3",
+    "jest": "^29.7.0",
+    "wdio-wait-for": "^3.0.11"
+  }
+}
