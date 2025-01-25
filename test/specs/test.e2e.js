@@ -49,6 +49,7 @@ describe.only("Assignment2: Add 2 moisturizers to cart", () => {
     it.only("Add to cart: Least Expensive containing Aloe", async () => {
         const moisturizers = await $$(helper.moisturizers);
         const aloeProdPrices = [];
+        let productsDetails = {};
 
         //Loop through products
         for (const prod of moisturizers) {
@@ -62,7 +63,7 @@ describe.only("Assignment2: Add 2 moisturizers to cart", () => {
                 const addButton = await prod.$(helper.prodBtns).getHTML(); //grab button
 
                 //Heres the object
-                const productsDetails = {
+                productsDetails = {
                     name: name, // for productsDetail.name - it pulls the const name above and selectors
                     price: price, //etc
                     addButton: addButton, //etc
@@ -72,21 +73,34 @@ describe.only("Assignment2: Add 2 moisturizers to cart", () => {
 
                 //I want to grab the price object and keep the last 3 numbers since theres also letters in this
 
-                const isolatePrice = await productsDetails.price.slice(-3); // grabs last three numbers of price
-                const numPrice = parseInt(isolatePrice);
+               // const isolatePrice = await productsDetails.price.slice(-3); // grabs last three numbers of price
+                //const numPrice = parseInt(isolatePrice);
+                const numPrice = await productsDetails.price.slice(-3);
 
-                console.log(numPrice);
-                aloeProdPrices.push(numPrice);
+                
+                aloeProdPrices.push(numPrice); // adds to array aloeProdPrices
 
-                console.log(aloeProdPrices);
-                const minPrice = Math.min(...aloeProdPrices); //spread operator // grabbed min price
-                console.log(minPrice);
-                ////////HOW TO GRAB the object props back to click btn. also may need to add the price slice into the productsDetails.price thing and reposition some statements
+                //console.log(aloeProdPrices);
+               // const minPrice = Math.min(...aloeProdPrices); //spread operator // grabbed min price
+               // console.log(minPrice);
             }
+            
         }
+        const minPrice = Math.min(...aloeProdPrices); //spread operator // grabbed min price
+                console.log(minPrice)
 
         //Need to make an array or object. using Get?
     });
 
     it("Add to cart: Least Expensive containing Almond", async () => {});
+});
+
+describe('fadfad', () => {
+    it('should', async() => {
+
+        
+
+    });
+
+
 });
